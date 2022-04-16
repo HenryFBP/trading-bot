@@ -29,16 +29,20 @@ def train_model(agent, episode, data, ep_count=100, batch_size=32, window_size=1
 
         # select an action
         action = agent.act(state)
+        # print("we want to {}".format({0:"HODL",1:"BUY",2:"SELL"}[action]))
 
         # BUY
         if action == 1:
-            agent.inventory.append(data[t])
+            datum=data[t]
+            agent.inventory.append(datum)
+            # print("buying   {}".format(datum))
 
         # SELL
         elif action == 2 and len(agent.inventory) > 0:
             bought_price = agent.inventory.pop(0)
             delta = data[t] - bought_price
             reward = delta #max(delta, 0)
+            # print("sold;d=  {}".format(delta))
             total_profit += delta
 
         # HOLD
