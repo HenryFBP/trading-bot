@@ -57,7 +57,7 @@ To get into the pipenv environment.
 To use with Docker:
 
 ```bash
-git clone git@github.com:HenryFBP/trading-bot.git
+git clone -b use-pipenv git@github.com:HenryFBP/trading-bot.git
 cd trading-bot/
 DOCKER_DEFAULT_PLATFORM=linux/amd64 docker run -it -v $(pwd):/mnt python:3.7-slim bash
 # from inside the running Docker shell
