@@ -59,12 +59,12 @@ To use with Docker:
 ```bash
 git clone -b use-pipenv git@github.com:HenryFBP/trading-bot.git
 cd trading-bot/
-DOCKER_DEFAULT_PLATFORM=linux/amd64 docker run -it -v $(pwd):/mnt python:3.7-slim bash
+DOCKER_DEFAULT_PLATFORM=linux/amd64 docker run -it -v $(pwd):/mnt python:3.8-slim bash
 # from inside the running Docker shell
 cd /mnt
 pip install pipenv
-pipenv --python /usr/local/bin/python install
-PIPENV_SHELL='/bin/bash' pipenv shell
+pipenv install
+pipenv shell
 ```
 
 Now you can open up a terminal and start training the agent:
