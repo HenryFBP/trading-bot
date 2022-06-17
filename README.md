@@ -64,7 +64,7 @@ DOCKER_DEFAULT_PLATFORM=linux/amd64 docker run -it -v $(pwd):/mnt python:3.7-sli
 cd /mnt
 pip install pipenv
 pipenv --python /usr/local/bin/python install
-pipenv shell
+PIPENV_SHELL='/bin/bash' pipenv shell
 ```
 
 Now you can open up a terminal and start training the agent:
