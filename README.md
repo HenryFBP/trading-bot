@@ -44,7 +44,6 @@ You can download Historical Financial data from [Yahoo! Finance](https://ca.fina
 In order to use this project, you'll need to install the required python packages:
 
 ```bash
-cat Pipfile
 pip install pipenv
 pipenv install
 ```
@@ -54,6 +53,19 @@ And make sure to run
     pipenv shell
 
 To get into the pipenv environment.
+
+To use with Docker:
+
+```bash
+git clone -b use-pipenv git@github.com:HenryFBP/trading-bot.git
+cd trading-bot/
+DOCKER_DEFAULT_PLATFORM=linux/amd64 docker run -it -v $(pwd):/mnt python:3.8-slim bash
+# from inside the running Docker shell
+cd /mnt
+pip install pipenv
+pipenv install
+pipenv shell
+```
 
 Now you can open up a terminal and start training the agent:
 
